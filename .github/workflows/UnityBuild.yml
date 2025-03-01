@@ -1,6 +1,9 @@
 name: Unity Android Build Sample 😎
 
-on: [push, pull_request]
+on: 
+  issues:
+    type:
+      - opened
 
 jobs:
   build:
