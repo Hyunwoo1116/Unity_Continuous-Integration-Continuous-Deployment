@@ -1,37 +1,27 @@
-name: Unity Build _ Androids
+name: Unity Android Build Sample 😎
 
-on:
-  push:
-    branches:
-      main
+on: [push, pull_request]
 
-permissions: write-all
-  
 jobs:
-  #Job 설정
-  buildForAndroid: 
-    name: Build Android🛸🛸🛸
+  build:
+    name: Build my project ✨
     runs-on: ubuntu-latest
     steps:
-
-      # Step1 - Check Out
-      - name: Check Out
+      # Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           lfs: true
 
-      # Step2 - Cache Library
-      - name: Cache Library
-        uses: actions/cache@v4.0.2
-        with: 
+      # Cache
+      - uses: actions/cache@v3
+        with:
           path: Library
           key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-
-
-      # Step3 - Unity Build
-      - name: Unity Build
+      # Build
+      - name: Build project
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
