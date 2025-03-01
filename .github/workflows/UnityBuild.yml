@@ -18,8 +18,8 @@ jobs:
       # Cache
       - uses: actions/cache@v3
         with:
-          path: UnityGithubActions/Library
-          key: Library-${{ hashFiles('UnityGithubActions/Assets/**', 'UnityGithubActions/Packages/**', 'UnityGithubActions/ProjectSettings/**') }}
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
             Library-
       # Build
