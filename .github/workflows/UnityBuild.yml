@@ -15,6 +15,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true
+      # Cache
+      - uses: actions/cache@v3
+        with:
+          path: UnityGithubActions/Library
+          key: Library-${{ hashFiles('UnityGithubActions/Assets/**', 'UnityGithubActions/Packages/**', 'UnityGithubActions/ProjectSettings/**') }}
+          restore-keys: |
+            Library-
       # Build
       - name: Build project
         uses: game-ci/unity-builder@v4
