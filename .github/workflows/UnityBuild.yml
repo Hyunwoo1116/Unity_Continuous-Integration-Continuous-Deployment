@@ -2,7 +2,7 @@ name: Unity Android Build Sample 😎
 
 on: 
   issues:
-    type: 
+    types: 
     - opened
 
 jobs:
