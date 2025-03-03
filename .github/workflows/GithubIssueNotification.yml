@@ -1,8 +1,7 @@
 name: Opend Issue Notification # 1
 on: # 2
   issues:
-    types:
-      - opened 
+    types: opened 
 
 jobs: 
   create-issue:
