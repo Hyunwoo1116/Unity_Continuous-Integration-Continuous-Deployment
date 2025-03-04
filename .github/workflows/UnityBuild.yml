@@ -48,7 +48,7 @@ jobs:
         with:
           targetPlatform: Android
       - name : Upload Release APK artifact
-        uses : actions/upload-artifact@v3
+        uses : actions/upload-artifact@v4
         with :
           name: Build
           path: build
