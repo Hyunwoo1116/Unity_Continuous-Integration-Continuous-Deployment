@@ -44,11 +44,6 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: Android
-      - name : Upload Release APK artifact
-        uses : actions/upload-artifact@v4
-        with :
-          name: Build
-          path: build
       # Upload Release APK File In 
       - name: Upload Release APK
         uses: actions/upload-artifact@v4
