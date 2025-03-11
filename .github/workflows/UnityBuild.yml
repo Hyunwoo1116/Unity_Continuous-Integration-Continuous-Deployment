@@ -54,4 +54,4 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-          curl -v -H "Content-Type: multipart/form-data" -X POST -F "file=@app/build/outputs/apk/release/app-release.apk" -F "content=Release APK" $DISCORD_WEBHOOK
+          curl -v -H "Content-Type: multipart/form-data" -X POST -F "file=@app/build/outputs/apk/release/app-release.apk" -F "content=Release APK" ${{ secrets.DISCORD_WEBHOOK }}
