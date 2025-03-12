@@ -48,10 +48,10 @@ jobs:
       - name: Upload Release APK
         uses: actions/upload-artifact@v4
         with:
-          name: app-release.apk
-          path: app/build/outputs/apk/release/app-release.apk
-      - name: Upload Release APK to Discord
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        run: |
-          curl -v -H "Content-Type: multipart/form-data" -X POST -F "file=@app/build/outputs/apk/release/app-release.apk" -F "content=Release APK" ${{ secrets.DISCORD_WEBHOOK }}
+          name: build
+          path: build
+      # - name: Upload Release APK to Discord
+      #   env:
+      #     DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      #   run: |
+      #     curl -v -H "Content-Type: multipart/form-data" -X POST -F "file=@app/build/outputs/apk/release/app-release.apk" -F "content=Release APK" ${{ secrets.DISCORD_WEBHOOK }}
